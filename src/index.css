@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 font-sans text-vwfs-text bg-vwfs-surface;
+  }
+  h1 { @apply text-[48px] font-bold text-vwfs-brand; }
+  h2 { @apply text-[30px] font-bold text-vwfs-brand; }
+  h3 { @apply text-[24px] font-bold text-vwfs-brand; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-vwfs-accent text-white uppercase font-bold px-6 py-2 rounded border-none cursor-pointer
+           hover:bg-[#04b88d] transition-colors text-sm tracking-wide;
+  }
+  .btn-secondary {
+    @apply bg-white text-vwfs-brand border border-vwfs-brand uppercase font-bold px-6 py-2 rounded
+           cursor-pointer hover:bg-vwfs-surface transition-colors text-sm tracking-wide;
+  }
+  .btn-danger {
+    @apply bg-vwfs-error text-white uppercase font-bold px-6 py-2 rounded border-none cursor-pointer
+           hover:bg-red-700 transition-colors text-sm tracking-wide;
+  }
+  .card {
+    @apply bg-white rounded shadow-card p-6;
+  }
+  .card-hover {
+    @apply card hover:shadow-card-hover transition-shadow cursor-pointer;
+  }
+  .input-field {
+    @apply bg-vwfs-surface border border-vwfs-surface-dark rounded px-3 py-2 text-vwfs-text
+           focus:border-vwfs-brand focus:border-2 focus:outline-none transition-colors w-full;
+  }
+  .link {
+    @apply text-vwfs-brand font-bold uppercase text-sm tracking-wide hover:underline;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #A8ADB3; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #004666; }
+
+/* Pulse animation for approval timeline */
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(102, 228, 238, 0.7); }
+  50% { box-shadow: 0 0 0 8px rgba(102, 228, 238, 0); }
+}
+.pulse-dot { animation: pulse-dot 2s infinite; }
